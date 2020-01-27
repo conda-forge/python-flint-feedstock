@@ -10,7 +10,7 @@ source:
   sha256: 947573a0f7e92ac58c08ff43c3c949379a3329e52df93e8e2420fe8041c8cfbd
 
 build:
-  number: 1000
+  number: 1001
   skip: True  # [win]
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
@@ -29,7 +29,6 @@ requirements:
     - numpy
   run:
     - python
-    - arb
     - libflint
     - mpfr
     - mpir    # [win]
@@ -56,3 +55,4 @@ about:
 extra:
   recipe-maintainers:
     - isuruf
+    - saraedum
