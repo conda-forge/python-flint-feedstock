@@ -8,11 +8,16 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 947573a0f7e92ac58c08ff43c3c949379a3329e52df93e8e2420fe8041c8cfbd
+  patches:
+    - gh9.patch
 
 build:
-  number: 1002
+  number: 1003
   skip: True  # [win]
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+  script:
+    - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
+    - "{{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv"  # [win]
+    - "{{ PYTHON }} -m pip install . -vvv"  # [unix]
 
 requirements:
   build:
@@ -33,7 +38,6 @@ requirements:
     - mpfr
     - mpir    # [win]
     - gmp     # [unix]
-    - {{ pin_compatible("numpy") }}
 
 test:
   source_files:
