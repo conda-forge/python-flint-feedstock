@@ -1,0 +1,32 @@
+From bf23d560ec71f4cc63488a3f1f7d74a4466a440e Mon Sep 17 00:00:00 2001
+From: Isuru Fernando <isuruf@gmail.com>
+Date: Mon, 8 Jun 2020 21:40:15 +0000
+Subject: [PATCH] Fix windows support
+
+---
+ setup.py | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index b825b12..58389e4 100644
+--- a/setup.py
++++ b/setup.py
+@@ -8,16 +8,12 @@
+ 
+ from distutils.sysconfig import get_config_vars
+ 
+-(opt,) = get_config_vars('OPT')
+-os.environ['OPT'] = " ".join(flag for flag in opt.split() if flag != '-Wstrict-prototypes')
+-
+ if sys.platform == 'win32':
+     libraries = ["flint", "arb", "mpir", "mpfr", "pthreads"]
+-    default_lib_dirs += [
+-        os.path.join(d, "manual-link") for d in default_lib_dirs
+-    ]
+ else:
+     libraries = ["flint", "arb"]
++    (opt,) = get_config_vars('OPT')
++    os.environ['OPT'] = " ".join(flag for flag in opt.split() if flag != '-Wstrict-prototypes')
+ 
+ default_include_dirs += [
+     os.path.join(d, "flint") for d in default_include_dirs
