@@ -14,7 +14,9 @@ source:
 build:
   number: 1003
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv  # [unix]
-  script: {{ PYTHON }} -m pip install . --global-option=build_ext --global-option="-I%LIBRARY_INC%\flint"  --global-option="-I%LIBRARY_INC%"  --global-option="-L%LIBRARY_LIB%"  --no-deps --ignore-installed -vvv  # [win]
+  script:  # [win]
+    - set "INC=%INC%;%LIBRARY_INC%\flint"  # [win]
+    - {{ PYTHON }} -m pip install . --global-option=build_ext --global-option="-I%LIBRARY_INC%\flint"  --global-option="-I%LIBRARY_INC%"  --global-option="-L%LIBRARY_LIB%"  --no-deps --ignore-installed -vvv  # [win]
 
 requirements:
   build:
