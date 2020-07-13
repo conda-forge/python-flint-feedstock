@@ -5,7 +5,7 @@ Home: https://github.com/fredrik-johansson/python-flint
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Python bindings for Flint and Arb
 
