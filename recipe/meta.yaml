@@ -12,7 +12,7 @@ source:
     - gh9.patch
 
 build:
-  number: 1004
+  number: 1005
   skip: True  # [win]
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
