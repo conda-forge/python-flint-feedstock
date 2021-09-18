@@ -10,9 +10,10 @@ source:
   sha256: 947573a0f7e92ac58c08ff43c3c949379a3329e52df93e8e2420fe8041c8cfbd
   patches:
     - gh9.patch
+    - doctest.patch
 
 build:
-  number: 1005
+  number: 1006
   skip: True  # [win]
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
