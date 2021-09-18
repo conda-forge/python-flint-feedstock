@@ -1,0 +1,36 @@
+From dcc07cf1a76043b0f1874b1e56f4736e93515db5 Mon Sep 17 00:00:00 2001
+From: Jan Janssen <jan-janssen@users.noreply.github.com>
+Date: Tue, 9 Feb 2021 22:22:23 +0100
+Subject: [PATCH] doctest
+
+---
+ flint/acb_mat.pyx | 2 +-
+ flint/arb_mat.pyx | 4 ++--
+ 2 file changed, 3 insertion(+), 3 deletions(-)
+
+diff --git a/src/flint/acb_mat.pyx b/src/flint/acb_mat.pyx
+--- a/src/flint/acb_mat.pyx
++++ b/src/flint/acb_mat.pyx
+@@ -666,7 +666,7 @@
+             >>> sum(acb_mat(arb_mat.hilbert(20,20)).eig(nonstop=True))
+             nan + nanj
+             >>> showgood(lambda: sum(acb_mat(arb_mat.hilbert(20,20)).eig(nonstop=True)), parts=False)
+-            2.47967321036454 + [+/- 1.48e-56]j
++            2.47967321036454 + 0e-55j
+ 
+         With default options, the method only succeeds if all eigenvalues can be
+         isolated. Multiple (overlapping) eigenvalues can be handled by
+diff --git a/src/flint/arb_mat.pyx b/src/flint/arb_mat.pyx
+--- a/src/flint/arb_mat.pyx
++++ b/src/flint/arb_mat.pyx
+@@ -617,8 +617,8 @@
+ 
+             >>> print(arb_mat.stirling(4, 4).inv().str(5, radius=False))
+             [1.0000,       0,              0,              0]
+-            [     0,  1.0000, [+/- 1.20e-15], [+/- 5.00e-16]]
+-            [     0, -1.0000,         1.0000, [+/- 1.67e-16]]
++            [     0,  1.0000,          0e-14,          0e-15]
++            [     0, -1.0000,         1.0000,          0e-15]
+             [     0,  1.0000,        -3.0000,         1.0000]
+             >>> print(arb_mat.stirling(4, 4).inv().chop(1e-6).str(5, radius=False))
+             [1.0000,       0,       0,      0]
