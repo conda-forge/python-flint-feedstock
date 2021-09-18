@@ -5,8 +5,8 @@ Subject: [PATCH] doctest
 
 ---
  src/acb_mat.pyx | 2 +-
- src/arb_mat.pyx | 4 ++--
- 2 file changed, 3 insertion(+), 3 deletions(-)
+ src/arb_mat.pyx | 8 ++++----
+ 2 file changed, 5 insertion(+), 5 deletions(-)
 
 diff --git a/src/acb_mat.pyx b/src/acb_mat.pyx
 --- a/src/acb_mat.pyx
