@@ -13,7 +13,7 @@ source:
     - doctest.patch
 
 build:
-  number: 1008
+  number: 1009
   skip: True  # [win]
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
