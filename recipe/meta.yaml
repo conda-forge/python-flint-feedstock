@@ -47,6 +47,10 @@ test:
     - flint
   commands:
     - python test/test.py
+    - pip check
+  requires: 
+    - pip
+    - doctest
 
 about:
   home: https://github.com/fredrik-johansson/python-flint
