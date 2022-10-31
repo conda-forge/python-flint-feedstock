@@ -1,5 +1,5 @@
 arb:
-- '2.22'
+- '2.23'
 c_compiler:
 - gcc
 c_compiler_version:
@@ -15,16 +15,12 @@ docker_image:
 gmp:
 - '6'
 libflint:
-- '2.8'
+- '2.9'
 mpfr:
 - '4'
 numpy:
 - '1.21'
 pin_run_as_build:
-  gmp:
-    max_pin: x
-  mpfr:
-    max_pin: x
   python:
     min_pin: x.x
     max_pin: x.x
