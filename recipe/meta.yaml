@@ -1,5 +1,5 @@
 {% set name = "python-flint" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,18 +7,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 947573a0f7e92ac58c08ff43c3c949379a3329e52df93e8e2420fe8041c8cfbd
-  patches:
-    - gh9.patch
-    - doctest.patch
+  sha256: bb0b8d8b4359a6d51da91a5045165e1dc7b8eda9b8260497d860115911eb7c70
 
 build:
-  number: 1010
-  skip: True  # [win]
+  number: 0
+  skip: true  # [win]
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
-    - "{{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv"  # [win]
-    - "{{ PYTHON }} -m pip install . -vvv"  # [unix]
+    - {{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv    # [win]
+    - {{ PYTHON }} -m pip install . -vvv    # [unix]
 
 requirements:
   build:
@@ -53,7 +50,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Python bindings for Flint and Arb'
+  summary: Python bindings for Flint and Arb
   doc_url: http://fredrikj.net/python-flint
   dev_url: https://github.com/fredrik-johansson/python-flint
 
