@@ -1,5 +1,5 @@
 {% set name = "python-flint" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bb0b8d8b4359a6d51da91a5045165e1dc7b8eda9b8260497d860115911eb7c70
+  sha256: 652dc0b87d2b76d9297d8c4b1284de0ad57ef97ff8784349aa2a1dc21ef6c1b8
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
@@ -39,11 +39,11 @@ requirements:
 
 test:
   source_files:
-    - test/test.py
+    - src/flint/test/test.py
   imports:
     - flint
   commands:
-    - python test/test.py
+    - python src/flint/test/test.py
 
 about:
   home: https://github.com/fredrik-johansson/python-flint
