@@ -39,11 +39,11 @@ requirements:
 
 test:
   source_files:
-    - test/test.py
+    - src/flint/test/test.py
   imports:
     - flint
   commands:
-    - python test/test.py
+    - python src/flint/test/test.py
 
 about:
   home: https://github.com/fredrik-johansson/python-flint
