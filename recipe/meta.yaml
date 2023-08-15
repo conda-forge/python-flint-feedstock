@@ -10,8 +10,7 @@ source:
   sha256: 652dc0b87d2b76d9297d8c4b1284de0ad57ef97ff8784349aa2a1dc21ef6c1b8
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
     - {{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv    # [win]
@@ -32,18 +31,12 @@ requirements:
     - numpy
   run:
     - python
-    - libflint
-    - mpfr
-    - mpir    # [win]
-    - gmp     # [unix]
 
 test:
-  source_files:
-    - src/flint/test/test.py
   imports:
     - flint
   commands:
-    - python src/flint/test/test.py
+    - python -m flint.test
 
 about:
   home: https://github.com/fredrik-johansson/python-flint
