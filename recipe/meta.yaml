@@ -1,5 +1,5 @@
 {% set name = "python-flint" %}
-{% set version = "0.4.2" %}
+{% set version = "0.4.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d017dd6949b6186db2d2951070e2ce795116672f51f2d79de72dd29bfb85c1fb
+  sha256: 3fd61fe4c8fa58a6126e30eda110e0e378ab375c07434120b0bd512090bdb313
 
 build:
   number: 0
