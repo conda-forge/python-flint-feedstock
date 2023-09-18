@@ -39,6 +39,8 @@ requirements:
     - python
 
 test:
+  requires:
+    - pypy3.9 7.3.11  # [python_impl == "pypy"]
   imports:
     - flint
   commands:
