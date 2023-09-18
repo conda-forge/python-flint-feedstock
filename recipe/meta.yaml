@@ -32,6 +32,7 @@ requirements:
     - arb
     - libflint
     - mpfr
+    - pypy3.9 7.3.11  # [python_impl == "pypy"]
     - mpir    # [win]
     - gmp     # [unix]
   run:
