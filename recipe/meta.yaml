@@ -10,7 +10,7 @@ source:
   sha256: d017dd6949b6186db2d2951070e2ce795116672f51f2d79de72dd29bfb85c1fb
 
 build:
-  number: 0
+  number: 1
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
     - {{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv    # [win]
