@@ -1,33 +1,28 @@
 arb:
 - '2.23'
 c_compiler:
-- gcc
-c_compiler_version:
-- '12'
-cdt_name:
-- cos7
+- vs2019
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-docker_image:
-- quay.io/condaforge/linux-anvil-cos7-x86_64
-gmp:
-- '6'
 libflint:
 - '2.9'
 mpfr:
 - '4'
 numpy:
-- '1.21'
+- '1.22'
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.10.* *_cpython
+- 3.9.* *_73_pypy
+python_impl:
+- pypy
 target_platform:
-- linux-ppc64le
+- win-64
 zip_keys:
 - - python
   - numpy
+  - python_impl
