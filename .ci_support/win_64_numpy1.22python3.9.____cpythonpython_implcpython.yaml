@@ -7,7 +7,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 libflint:
-- '2.9'
+- '3.0'
 mpfr:
 - '4'
 numpy:
