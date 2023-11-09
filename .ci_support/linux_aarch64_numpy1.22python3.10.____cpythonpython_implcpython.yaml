@@ -1,7 +1,5 @@
 BUILD:
 - aarch64-conda_cos7-linux-gnu
-arb:
-- '2.23'
 c_compiler:
 - gcc
 c_compiler_version:
@@ -19,7 +17,7 @@ docker_image:
 gmp:
 - '6'
 libflint:
-- '2.9'
+- '3.0'
 mpfr:
 - '4'
 numpy:
