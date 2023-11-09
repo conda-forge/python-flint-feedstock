@@ -30,7 +30,7 @@ requirements:
     - pip
     - numpy
     - arb
-    - libflint
+    - libflint >=3.0
     - mpfr
     - pypy3.9 7.3.11  # [python_impl == "pypy"]
     - mpir    # [win]
