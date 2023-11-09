@@ -29,7 +29,6 @@ requirements:
     - cython
     - pip
     - numpy
-    - arb
     - libflint >=3.0
     - mpfr
     - pypy3.9 7.3.11  # [python_impl == "pypy"]
