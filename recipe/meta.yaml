@@ -10,7 +10,7 @@ source:
   sha256: 0358f05548d477e23c79dbe15b2449e12e4b3d76af41fb16a4c7d035065b12cd
 
 build:
-  number: 1
+  number: 2
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
     - {{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv    # [win]
@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - cross-python_{{ target_platform }}    # [build_platform != target_platform]
     - python                                # [build_platform != target_platform]
     - cython                                # [build_platform != target_platform]
