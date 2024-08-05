@@ -10,7 +10,7 @@ source:
   sha256: 0358f05548d477e23c79dbe15b2449e12e4b3d76af41fb16a4c7d035065b12cd
 
 build:
-  number: 2
+  number: 3
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
     - {{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv    # [win]
@@ -33,7 +33,7 @@ requirements:
     - libflint
     - mpfr
     - pypy3.9 7.3.11  # [python_impl == "pypy"]
-    - mpir    # [win]
+    - gmp    # [win]
     - gmp     # [unix]
   run:
     - python
