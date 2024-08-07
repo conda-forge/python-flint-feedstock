@@ -33,8 +33,7 @@ requirements:
     - libflint
     - mpfr
     - pypy3.9 7.3.11  # [python_impl == "pypy"]
-    - gmp    # [win]
-    - gmp     # [unix]
+    - gmp
   run:
     - python
 
