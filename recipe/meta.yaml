@@ -11,6 +11,7 @@ source:
 
 build:
   number: 0
+  skip: true  # [win]
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
     - {{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv    # [win]
