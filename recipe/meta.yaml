@@ -1,5 +1,5 @@
 {% set name = "python-flint" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0358f05548d477e23c79dbe15b2449e12e4b3d76af41fb16a4c7d035065b12cd
+  sha256: f829e00774534891b38de41bc511cf6c7d6d216544a6a84b92d9e1f159de0878
 
 build:
-  number: 2
+  number: 0
+  skip: true  # [win]
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
     - {{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv    # [win]
