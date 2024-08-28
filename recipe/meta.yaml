@@ -8,10 +8,12 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: f829e00774534891b38de41bc511cf6c7d6d216544a6a84b92d9e1f159de0878
+  patches:
+    # Make flint.h use DLL build
+    - fix_win_build.diff
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
     - {{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv    # [win]
@@ -30,6 +32,7 @@ requirements:
     - python
     - cython
     - pip
+    - setuptools
     - numpy
     - libflint
     - mpfr
