@@ -29,6 +29,7 @@ requirements:
     - python
     - cython
     - pip
+    - setuptools
     - numpy
     - libflint
     - mpfr
