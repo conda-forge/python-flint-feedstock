@@ -1,0 +1,25 @@
+--- setup.py.bak	2024-08-28 09:31:54.717038155 -0500
++++ setup.py	2024-08-28 09:34:15.973862670 -0500
+@@ -20,6 +20,7 @@
+ 
+ 
+ libraries = ["flint"]
++define_macros = []
+ 
+ 
+ if sys.platform == 'win32':
+@@ -44,13 +45,13 @@
+     else:
+         # For the MSVC toolchain link with mpir instead of gmp
+         libraries += ["mpir", "mpfr", "pthreads"]
++        define_macros.append(('MSC_USE_DLL', 1))
+ else:
+     libraries = ["flint"]
+     (opt,) = get_config_vars('OPT')
+     os.environ['OPT'] = " ".join(flag for flag in opt.split() if flag != '-Wstrict-prototypes')
+ 
+ 
+-define_macros = []
+ compiler_directives = {
+     'language_level': 3,
+     'binding': False,
