@@ -32,7 +32,7 @@ requirements:
     - python
     - cython
     - pip
-    - setuptools
+    - meson-python
     - numpy
     - libflint
     - mpfr
