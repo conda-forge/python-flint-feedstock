@@ -59,7 +59,7 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: Python bindings for Flint and Arb
-  doc_url: https://python-flint.readthedocs.io/en/latest/
+  doc_url: https://python-flint.readthedocs.io/en/latest
   dev_url: https://github.com/flintlib/python-flint
 
 extra:
