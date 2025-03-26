@@ -27,11 +27,15 @@ requirements:
     - python                                # [build_platform != target_platform]
     - cython                                # [build_platform != target_platform]
     - pip                                   # [build_platform != target_platform]
+    - meson-python                          # [build_platform != target_platform]
+    - ninja                                 # [build_platform != target_platform]
+    - pkg-config                            # [build_platform != target_platform]
   host:
     - python
     - cython
     - pip
     - meson-python
+    - ninja
     - pkg-config
     - libflint
     - mpfr
@@ -50,13 +54,13 @@ test:
     - python -m flint.test
 
 about:
-  home: https://github.com/fredrik-johansson/python-flint
+  home: https://github.com/flintlib/python-flint
   license: MIT
   license_family: MIT
   license_file: LICENSE
   summary: Python bindings for Flint and Arb
-  doc_url: http://fredrikj.net/python-flint
-  dev_url: https://github.com/fredrik-johansson/python-flint
+  doc_url: https://python-flint.readthedocs.io/en/latest/
+  dev_url: https://github.com/flintlib/python-flint
 
 extra:
   recipe-maintainers:
