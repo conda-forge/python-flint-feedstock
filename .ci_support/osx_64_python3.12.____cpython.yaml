@@ -17,13 +17,11 @@ channel_targets:
 gmp:
 - '6'
 libflint:
-- '3.0'
+- '3.1'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 mpfr:
 - '4'
-numpy:
-- '2.0'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -36,5 +34,4 @@ target_platform:
 - osx-64
 zip_keys:
 - - python
-  - numpy
   - python_impl
