@@ -3,11 +3,11 @@ c_compiler:
 c_stdlib:
 - vs
 channel_sources:
-- conda-forge/label/python_rc,conda-forge
+- conda-forge
 channel_targets:
 - conda-forge main
 libflint:
-- '3.0'
+- '3.2'
 mpfr:
 - '4'
 numpy:
@@ -26,4 +26,3 @@ zip_keys:
 - - python
   - numpy
   - python_impl
-  - channel_sources
