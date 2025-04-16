@@ -17,7 +17,7 @@ build:
   skip: true  # [py<311]
   script:
     - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
-    - {{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv    # [win]
+    - {{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL --global-option=build_ext --global-option=/experimental:c11atomics --global-option=build_ext --global-option=/std:c11 -vvv    # [win]
     - {{ PYTHON }} -m pip install . -vvv    # [unix]
 
 requirements:
