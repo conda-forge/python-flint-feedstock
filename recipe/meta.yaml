@@ -26,7 +26,6 @@ requirements:
     - python                                # [build_platform != target_platform]
     - cython                                # [build_platform != target_platform]
     - pip                                   # [build_platform != target_platform]
-    - meson-python                          # [build_platform != target_platform]
     - ninja                                 # [build_platform != target_platform]
     - pkg-config                            # [build_platform != target_platform]
   host:
