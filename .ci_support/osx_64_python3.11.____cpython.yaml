@@ -5,7 +5,7 @@ MACOSX_SDK_VERSION:
 c_compiler:
 - clang
 c_compiler_version:
-- '17'
+- '18'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -17,13 +17,11 @@ channel_targets:
 gmp:
 - '6'
 libflint:
-- '3.0'
+- '3.2'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 mpfr:
 - '4'
-numpy:
-- '2.0'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -36,6 +34,4 @@ target_platform:
 - osx-64
 zip_keys:
 - - python
-  - numpy
   - python_impl
-  - channel_sources

@@ -1,24 +1,23 @@
 {% set name = "python-flint" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f829e00774534891b38de41bc511cf6c7d6d216544a6a84b92d9e1f159de0878
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 488352f6c37933bc44558502f0bfe7d0339a6cc07e97d2a1db4afc7660fa8022
   patches:
     # Make flint.h use DLL build
     - fix_win_build.diff
 
 build:
-  number: 2
+  number: 0
+  skip: true  # [py<311]
   script:
-    - set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\\flint"  # [win]
-    - {{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv    # [win]
-    - {{ PYTHON }} -m pip install . -vvv    # [unix]
-
+    - {{ PYTHON }} -m pip install . -Csetup-args="-Dc_args=/std:c11 /experimental:c11atomics" -vvv    # [win]
+    - {{ PYTHON }} -m pip install . -Csetup-args=${MESON_ARGS// / -Csetup-args=} -vvv                                     # [unix]
 requirements:
   build:
     - {{ compiler('c') }}
@@ -27,18 +26,19 @@ requirements:
     - python                                # [build_platform != target_platform]
     - cython                                # [build_platform != target_platform]
     - pip                                   # [build_platform != target_platform]
-    - numpy                                 # [build_platform != target_platform]
+    - ninja                                 # [build_platform != target_platform]
+    - pkg-config                            # [build_platform != target_platform]
   host:
     - python
     - cython
     - pip
-    - setuptools
-    - numpy
+    - meson-python
+    - ninja
+    - pkg-config
     - libflint
     - mpfr
     - pypy3.9 7.3.11  # [python_impl == "pypy"]
-    - mpir    # [win]
-    - gmp     # [unix]
+    - gmp
   run:
     - python
 
@@ -51,13 +51,13 @@ test:
     - python -m flint.test
 
 about:
-  home: https://github.com/fredrik-johansson/python-flint
+  home: https://github.com/flintlib/python-flint
   license: MIT
   license_family: MIT
   license_file: LICENSE
   summary: Python bindings for Flint and Arb
-  doc_url: http://fredrikj.net/python-flint
-  dev_url: https://github.com/fredrik-johansson/python-flint
+  doc_url: https://python-flint.readthedocs.io/en/latest
+  dev_url: https://github.com/flintlib/python-flint
 
 extra:
   recipe-maintainers:
