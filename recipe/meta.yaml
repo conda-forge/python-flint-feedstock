@@ -16,7 +16,7 @@ build:
   number: 0
   skip: true  # [py<311]
   script:
-    - {{ PYTHON }} -m pip install . -Csetup-args="-Dc_args=\"/std:c11 /experimental:c11atomics\"" -vvv    # [win]
+    - {{ PYTHON }} -m pip install . -Csetup-args="-Dc_args=/std:c11 /experimental:c11atomics" -vvv    # [win]
     - {{ PYTHON }} -m pip install . -Csetup-args=${MESON_ARGS// / -Csetup-args=} -vvv                                     # [unix]
 requirements:
   build:
