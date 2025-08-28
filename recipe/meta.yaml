@@ -13,7 +13,7 @@ source:
     - fix_win_build.diff
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<311]
   script:
     - {{ PYTHON }} -m pip install . -Csetup-args="-Dc_args=/std:c11 /experimental:c11atomics" -vvv    # [win]
