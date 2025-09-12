@@ -24,13 +24,13 @@ requirements:
     - {{ stdlib("c") }}
     - cross-python_{{ target_platform }}    # [build_platform != target_platform]
     - python                                # [build_platform != target_platform]
-    - cython >=3.0.11, <=3.1.0a1            # [build_platform != target_platform]
+    - cython >=3.0.11,<=3.1.0a1             # [build_platform != target_platform]
     - pip                                   # [build_platform != target_platform]
     - ninja                                 # [build_platform != target_platform]
     - pkg-config                            # [build_platform != target_platform]
   host:
     - python
-    - cython
+    - cython >=3.0.11,<=3.1.0a1
     - pip
     - meson-python
     - ninja
