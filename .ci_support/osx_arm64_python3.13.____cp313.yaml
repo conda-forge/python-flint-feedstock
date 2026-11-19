@@ -15,7 +15,7 @@ channel_targets:
 gmp:
 - '6'
 libflint:
-- '3.5'
+- '3.6'
 macos_machine:
 - arm64-apple-darwin20.0.0
 mpfr:
