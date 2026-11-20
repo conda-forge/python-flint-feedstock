@@ -27,14 +27,14 @@ requirements:
     - cython >=3.1,<3.3                     # [build_platform != target_platform]
     - pip                                   # [build_platform != target_platform]
     - ninja                                 # [build_platform != target_platform]
-    - pkg-config                            # [build_platform != target_platform]
+    - pkgconf                               # [build_platform != target_platform]
   host:
     - python
     - cython >=3.1,<3.3
     - pip
     - meson-python
     - ninja
-    - pkg-config
+    - pkgconf
     - libflint
     - mpfr
     - pypy3.9 7.3.11  # [python_impl == "pypy"]
